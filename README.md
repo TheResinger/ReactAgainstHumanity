@@ -32,7 +32,7 @@ TBD
         - Select winning score count
         - Select how many can be in the lobby
         - Select if lobby is private
-    - Start game (if there are 2 or more players in the lobby.)
+    - Start game (if there are 3 or more players in the lobby.)
 
 4. Join game / Start Game
     - Pull list of cards from database
