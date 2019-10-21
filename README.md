@@ -1,5 +1,9 @@
 # cahReact
 
+## Site Layout
+
+TBD
+
 ## Stages of the game
 
 1. User sets user name
