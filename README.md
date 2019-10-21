@@ -4,6 +4,15 @@
 
 TBD
 
+## Technologies Used
+
+1. Node.js - JS Server base
+2. MongoDB - Database storage for cards, lobbies (Do i also store users in here? would need to be cleared out after every game. (as well as who is host of each lobby.))
+3. React - JS templating engine.
+4. express - routing capabilities.
+5. express-sessions - So the app knows who you are.
+
+
 ## Stages of the game
 
 1. User sets user name
