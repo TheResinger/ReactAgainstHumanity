@@ -37,15 +37,15 @@ TBD
 4. Join game / Start Game
     - Pull list of cards from database
     ```
-             Cards ( Database )
-             /               \
-        White Cards      Black Cards
-        /         \      /          \
-    Expansion    Text  Text     Expansion
+                     Cards ( Database )
+                      /               \
+                White Cards      Black Cards
+                /         \      /          \
+            Expansion    Text  Text      Expansion
     
-    Find all cards where expansion = host choice in settings pane.
+        Find all cards where expansion = host choice in settings pane.
     ```
     - Render one black card picked random `Math.floor(Math.random()*blackCards.length)` in the black card div with a react card component.
-    - Give all users in game 7 random white cards
+    - Give all users in game 10 random white cards
       - Remove cards from main white card array so there wont be duplicates
       - After round end add cards back to white card array so they can be added to players hand again later (chances of this potentially happening are slimg anyways. But its good to have the possibility.)
