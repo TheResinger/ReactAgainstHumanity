@@ -1,51 +1,68 @@
-# cahReact
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Site Layout
+## Available Scripts
 
-TBD
+In the project directory, you can run:
 
-## Technologies Used
+### `npm start`
 
-1. Node.js - JS Server base
-2. MongoDB - Database storage for cards, lobbies (Do i also store users in here? would need to be cleared out after every game. (as well as who is host of each lobby.))
-3. React - JS templating engine.
-4. express - routing capabilities.
-5. express-sessions - So the app knows who you are.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Stages of the game
+### `npm test`
 
-1. User sets user name
-    - Have a form for user submission of their displayed name in game and in the lobby list
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. User can either create a game or join an already active game
-    - Use react components to auto generate the list of games.
-    - If user creates game
-        - Stage 3 begins
-    - If user joins a game
-        - Stage 4 begins
+### `npm run build`
 
-3. Create Game
-    - Display User list react component
-    - Display game options react component
-        - Select which expansions to use
-        - Select winning score count
-        - Select how many can be in the lobby
-        - Select if lobby is private
-    - Start game (if there are 3 or more players in the lobby.)
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-4. Join game / Start Game
-    - Pull list of cards from database
-    ```
-                     Cards ( Database )
-                      /               \
-                White Cards      Black Cards
-                /         \      /          \
-            Expansion    Text  Text      Expansion
-    
-        Find all cards where expansion = host choice in settings pane.
-    ```
-    - Render one black card picked random `Math.floor(Math.random()*blackCards.length)` in the black card div with a react card component.
-    - Give all users in game 10 random white cards
-      - Remove cards from main white card array so there wont be duplicates
-      - After round end add cards back to white card array so they can be added to players hand again later (chances of this potentially happening are slimg anyways. But its good to have the possibility.)
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
