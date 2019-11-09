@@ -13,6 +13,7 @@ Built following the tutorial at https://blog.bitsrc.io/build-a-login-auth-app-wi
 - [ ] Set up Lobby Joining
 - [ ] Add Base Game Cards
 - [ ] Add Expansion Cards
+- [ ] Add Search Bar to lobby list
 
 ## Site Layout
 
