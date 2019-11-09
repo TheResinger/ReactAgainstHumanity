@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import { List, ListItem } from '../List';
+import { Card } from '../Card';
 import API from "../../utils/API";
 
 class Dashboard extends Component {
@@ -48,36 +48,35 @@ class Dashboard extends Component {
             //         </div>
             //     </div>
             // </div>
-            <div className="wrapper">
-                <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                }} onClick={this.onLogoutClick}>
-                    Logout
-                        </button>
+            <div className="container ">
+                <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.onLogoutClick}>Logout</button>
                 {this.state.lobbies.length ? (
-                    <List>
+                    <div className="row">
                         {this.state.lobbies.map(lobby => (
-                            <ListItem key={lobby._id}>
-                                <p>{lobby.gameName}</p>
-                                <li>{lobby.user1 ? (lobby.user1) : ("Empty")}</li>
-                                <li>{lobby.user2 ? (lobby.user2) : ("Empty")}</li>
-                                <li>{lobby.user3 ? (lobby.user3) : ("Empty")}</li>
-                                <li>{lobby.user4 ? (lobby.user4) : ("Empty")}</li>
-                                <li>{lobby.user5 ? (lobby.user5) : ("Empty")}</li>
-                                <li>{lobby.user6 ? (lobby.user6) : ("Empty")}</li>
-                                <li>{lobby.user7 ? (lobby.user7) : ("Empty")}</li>
-                                <li>{lobby.user8 ? (lobby.user8) : ("Empty")}</li>
-                                <li>{lobby.user9 ? (lobby.user9) : ("Empty")}</li>
-                                <li>{lobby.user10 ? (lobby.user10) : ("Empty")}</li>
-                                
-                                
-                                
-                            </ListItem>
+                            <div key={lobby._id} className="col s12 m6 l4">
+                                <div className="card blue-grey">
+                                    <div className="card-content white-text">
+                                        <span className="card-title"><strong>{lobby.gameName}</strong></span>
+                                        <p><strong>User List: </strong>{lobby.user1 ? (" " + lobby.user1) : (" Empty")}, {lobby.user2 ? (" " + lobby.user2) : (" Empty")}, {lobby.user3 ? (" " + lobby.user3) : (" Empty")}, {lobby.user4 ? (" " + lobby.user4) : (" Empty")}, {lobby.user5 ? (" " + lobby.user5) : (" Empty")}, {lobby.user6 ? (" " + lobby.user6) : (" Empty")}, {lobby.user7 ? (" " + lobby.user7) : (" Empty")}, {lobby.user8 ? (" " + lobby.user8) : (" Empty")}, {lobby.user9 ? (" " + lobby.user9) : (" Empty")}, {lobby.user10 ? (" " + lobby.user10) : (" Empty")}</p>
+                                        {/* Expansions */}
+                                        <br />
+                                        <p><strong>Expansions: </strong>Base Game, The First Expansion, The Second Expansion, The Third Expansion, The Fourth Expansion, The Fifth Expansion</p>
+                                        {/* Points to Win */}
+                                        <br />
+                                        <p><strong>Goal: </strong> {lobby.wincount}</p>
+                                    </div>
+                                    <div className="card-action">
+                                        {lobby.passwordBool ? (
+                                            <a href="/api/join/:id">Join Game(PASSWORDED)</a>
+                                        ):(
+                                            <a href="/api/join/:id">Join Game</a>
+                                        )}
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         ))}
-                    </List>
+                    </div>
                 ) : (
                         <h3 className="text-center">No Lobbies To Display.</h3>
                     )}
