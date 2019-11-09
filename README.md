@@ -29,7 +29,7 @@ TBD
 7. Bcrypt - User password hashing
 
 ## Stages of the game
-{See Flowchart.](flowchart.png)
+![See Flowchart.](flowchart.png)
 
 1. User sets user name
     - Have a form for user submission of their displayed name in game and in the lobby list
