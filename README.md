@@ -6,13 +6,13 @@ Built following the tutorial at https://blog.bitsrc.io/build-a-login-auth-app-wi
 # React Against Humanity
 
 ## TODO
-[x] Set up user registration and login
-[] Set up Lobby Display
-[] Figure out how to iterate through expansions object for lobby display
-[] Set up Lobby Creation
-[] Set up Lobby Joining
-[] Add Base Game Cards
-[] Add Expansion Cards
+- [x] Set up user registration and login
+- [ ] Set up Lobby Display
+- [ ] Figure out how to iterate through expansions object for lobby display
+- [ ] Set up Lobby Creation
+- [ ] Set up Lobby Joining
+- [ ] Add Base Game Cards
+- [ ] Add Expansion Cards
 
 ## Site Layout
 
