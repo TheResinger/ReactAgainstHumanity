@@ -1,29 +1,24 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
 
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
+const routes = require('./routes');
+
 const app = express();
+const port = process.env.PORT || 5000;
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+const db = require("./config/keys").mongoURI;
+mongoose.connect(db, { useNewUrlParser: true }).then(() => console.log("MongoDB connected")).catch((err) => console.log(err));
 
-// Define API routes here
-app.use(routes);
-// Send every other request to the React app
-// Define any API routes before this runs
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactagainsthumanity");
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
-app.listen(PORT, () => {
-  console.log(`Server running at https://localhost:${PORT}`);
+app.use(routes)
+
+app.listen(port, () => {
+    console.log(`Server is listening at http://localhost:${port}`);
 });

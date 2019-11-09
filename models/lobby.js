@@ -12,9 +12,11 @@ const lobbySchema = new Schema({
   user8: String,
   user9: String,
   user10: String,
-  expansions: String,
+  expansions: [{ expansion: String }],
   wincount: Number,
-  gameName: String
+  gameName: String,
+  passwordBool: Boolean,
+  password: String
 });
 
 const Lobby = mongoose.model("Lobby", lobbySchema);
