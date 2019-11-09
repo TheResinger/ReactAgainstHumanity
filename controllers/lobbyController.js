@@ -1,12 +1,7 @@
-const db = require("../models");
+const Lobby = require("../models/lobby");
 
 module.exports = {
   findAll: function(req, res) {
-    db.Lobby
-      .find(req.query)
-      .sort()
-  },
-  create: function(req, res) {
-     
+    Lobby.find(req.query).sort().then(dbModel => res.json(dbModel)).catch(err => res.status(422).json(err));
   }
 }

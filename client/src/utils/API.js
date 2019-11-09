@@ -2,13 +2,10 @@ import axios from "axios";
 
 export default {
   getLobbies: function() {
-    return axios.get("/api/lobbies");
-  },
-  getUserList: function() {
-    return axios.get("/api/users");
+    return axios.get("/api/lobby");
   },
   addLobby: function(lobbyData) {
-    return axios.post("/api/lobbies", lobbyData);
+    return axios.post("/api/lobby", lobbyData);
   },
   loadWhiteCards: function() {
     return axios.get("/api/whiteCards");
