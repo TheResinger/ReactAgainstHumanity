@@ -24,32 +24,15 @@ class Dashboard extends Component {
             this.setState({ lobbies: res.data })
         }).catch(err => console.log(err));
     }
+
+    
     render() {
         const { user } = this.props.auth;
 
         return (
-            // <div className="container valign-wrapper" style={{ height: "75vh" }}>
-            //     <div className="row">
-            //         <div className="col s12 center-align">
-            //             <h4>
-            //                 <b>Hey there,</b> {user.name.split(" ")[0]}
-            //                 <p className="flow-text grey-text text-darken-1">
-            //                     You are logged into a full-stack{" "} <span style={{ fontFamily: "monospace" }}>MERN</span> app
-            //                 </p>
-            //             </h4>
-            //             <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-            //                 width: "150px",
-            //                 borderRadius: "3px",
-            //                 letterSpacing: "1.5px",
-            //                 marginTop: "1rem"
-            //             }} onClick={this.onLogoutClick}>
-            //                 Logout
-            //             </button>
-            //         </div>
-            //     </div>
-            // </div>
-            <div className="container ">
+            <div className="container">
                 <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.onLogoutClick}>Logout</button>
+                <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.onLobbyClick}>New Lobby</button>
                 {this.state.lobbies.length ? (
                     <div className="row">
                         {this.state.lobbies.map(lobby => (
@@ -60,12 +43,12 @@ class Dashboard extends Component {
                                         <p><strong>User List: </strong>{lobby.user1 ? (" " + lobby.user1) : (" Empty")}, {lobby.user2 ? (" " + lobby.user2) : (" Empty")}, {lobby.user3 ? (" " + lobby.user3) : (" Empty")}, {lobby.user4 ? (" " + lobby.user4) : (" Empty")}, {lobby.user5 ? (" " + lobby.user5) : (" Empty")}, {lobby.user6 ? (" " + lobby.user6) : (" Empty")}, {lobby.user7 ? (" " + lobby.user7) : (" Empty")}, {lobby.user8 ? (" " + lobby.user8) : (" Empty")}, {lobby.user9 ? (" " + lobby.user9) : (" Empty")}, {lobby.user10 ? (" " + lobby.user10) : (" Empty")}</p>
                                         {/* Expansions */}
                                         <br />
-                                        <p><strong>Expansions: </strong>Base Game, The First Expansion, The Second Expansion, The Third Expansion, The Fourth Expansion, The Fifth Expansion</p>
+                                        <p><strong>Expansions: </strong>{lobby.expansions[0].baseGame ? (<span>Base Game</span>):(<span></span>)} {lobby.expansions[0].first ? (<span>, The First Expansion</span>):(<span></span>)} {lobby.expansions[0].second ? (<span>, The Second Expansion</span>):(<span></span>)} {lobby.expansions[0].third ? (<span>, The Third Expansion</span>):(<span></span>)} {lobby.expansions[0].fourth ? (<span>, The Fourth Expansion</span>):(<span></span>)} {lobby.expansions[0].fifth ? (<span>, The Fifth Expansion</span>):(<span></span>)} {lobby.expansions[0].sixth ? (<span>, The Sixth Expansion</span>):(<span></span>)}</p>
                                         {/* Points to Win */}
                                         <br />
                                         <p><strong>Goal: </strong> {lobby.wincount}</p>
                                     </div>
-                                    <div className="card-action">
+                                    <div className="card-action bottom">
                                         {lobby.passwordBool ? (
                                             <a href="/api/join/:id">Join Game(PASSWORDED)</a>
                                         ):(
