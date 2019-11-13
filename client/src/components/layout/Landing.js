@@ -7,11 +7,8 @@ class Landing extends Component {
             <div className="container valign-wrapper" style={{ height: "75vh" }}>
                 <div className="row">
                     <div className="col s12 center-align">
-                        <h4>
-                            <b>Build</b> a login/auth app with the {" "} <span style={{ fontFamily: "monospace" }}>MERN</span> stack from scratch
-                        </h4>
                         <p className="flow-text grey-text text-darken-1">
-                            Create a (minimal) full-stack app with user authentication via passport and JWTs
+                            <b>React against Humanity</b> is a Cards Against Humanity clone, which is available at <a href="https://cardsagainsthumanity.com/">cardsagainsthumanity.com</a>, where you can buy it or download and print it out yourself. It is distributed under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons - Attribution - Noncommercial - Share Alike</a> license. This web version is in no way endorsed or sponsored by cardsagainsthumanity.com. You may download the source code to this version from <a href="https://github.com/TheResinger/ReactAgainstHumanity">GitHub</a>.
                         </p>
                         <br />
                         <div className="col s6">

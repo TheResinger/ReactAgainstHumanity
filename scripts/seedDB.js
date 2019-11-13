@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const BlackCard = require("../models/BlackCard");
+const WhiteCard = require("../models/WhiteCard");
 
 // This file empties the Books collection and inserts the books below
 
@@ -2283,26 +2284,18 @@ const whiteCardSeed = [
   }
 ]
 
-db.BlackCard
-  .remove({})
-  .then(() => db.BlackCard.collection.insertMany(blackCardSeed))
-  .then(data => {
+BlackCard.remove({}).then(() => BlackCard.collection.insertMany(blackCardSeed)).then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
-  })
-  .catch(err => {
+  }).catch(err => {
     console.error(err);
     process.exit(1);
   });
 
-  db.WhiteCard
-  .remove({})
-  .then(() => db.WhiteCard.collection.insertMany(whiteCardSeed))
-  .then(data => {
+WhiteCard.remove({}).then(() => WhiteCard.collection.insertMany(whiteCardSeed)).then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
-  })
-  .catch(err => {
+  }).catch(err => {
     console.error(err);
     process.exit(1);
   });
