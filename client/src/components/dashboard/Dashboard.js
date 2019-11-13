@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import { Card } from '../Card';
+// import { Card } from '../Card';
 import { Link } from 'react-router-dom';
 import API from "../../utils/API";
 
@@ -32,7 +32,7 @@ class Dashboard extends Component {
 
 
     render() {
-        const { user } = this.props.auth;
+        // const { user } = this.props.auth;
 
         return (
             <div className="container">
