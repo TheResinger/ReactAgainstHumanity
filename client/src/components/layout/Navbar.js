@@ -10,7 +10,7 @@ class Navbar extends Component {
                         <ul className="left hide-on-med-and-down">
                             <li><a href="https://github.com/TheResinger/ReactAgainstHumanity">GitHub</a></li>
                         </ul>
-                        <Link to="/" className="brand-logo center white-text" style={{ fontFamily: "monospace", fontSize: "24px", width: "100%"}}>React Against Humanity</Link>
+                        <Link to="/dashboard" className="brand-logo center white-text" style={{ fontFamily: "monospace", fontSize: "24px", width: "100%"}}>React Against Humanity</Link>
                     </div>
                 </nav>
             </div>

@@ -2284,18 +2284,23 @@ const whiteCardSeed = [
   }
 ]
 
-BlackCard.remove({}).then(() => BlackCard.collection.insertMany(blackCardSeed)).then(data => {
+insertBlackCards = () => {
+  BlackCard.remove({}).then(() => BlackCard.collection.insertMany(blackCardSeed)).then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   }).catch(err => {
     console.error(err);
     process.exit(1);
   });
-
-WhiteCard.remove({}).then(() => WhiteCard.collection.insertMany(whiteCardSeed)).then(data => {
+};
+insertWhiteCards = () => {
+  WhiteCard.remove({}).then(() => WhiteCard.collection.insertMany(whiteCardSeed)).then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   }).catch(err => {
     console.error(err);
     process.exit(1);
   });
+};
+// insertBlackCards();
+insertWhiteCards();

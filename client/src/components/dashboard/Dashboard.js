@@ -46,10 +46,11 @@ class Dashboard extends Component {
                     <div className="row">
                         {this.state.lobbies.map(lobby => (
                             <div key={lobby._id} className="col s12 m6 l4" id={lobby._id}>
-                                <div className="card small blue-grey">
+                                {lobby.expansions[0].baseGame}
+                                <div className="card small blue -grey">
                                     <div className="card-content white-text">
                                         <span className="card-title"><strong>{lobby.gameName}</strong></span>
-                                        <p><b>User List: </b>{lobby.user1 ? (" " + lobby.user1) : (" Empty")}, {lobby.user2 ? (" " + lobby.user2) : (" Empty")}, {lobby.user3 ? (" " + lobby.user3) : (" Empty")}, {lobby.user4 ? (" " + lobby.user4) : (" Empty")}, {lobby.user5 ? (" " + lobby.user5) : (" Empty")}, {lobby.user6 ? (" " + lobby.user6) : (" Empty")}, {lobby.user7 ? (" " + lobby.user7) : (" Empty")}, {lobby.user8 ? (" " + lobby.user8) : (" Empty")}, {lobby.user9 ? (" " + lobby.user9) : (" Empty")}, {lobby.user10 ? (" " + lobby.user10) : (" Empty")}</p>
+                                        <p><b>User List: </b>{lobby.userList[0].user1 ? (" " + lobby.userList[0].user1) : (" Empty")}, {lobby.userList[0].user2 ? (" " + lobby.userList[0].user2) : (" Empty")}, {lobby.userList[0].user3 ? (" " + lobby.userList[0].user3) : (" Empty")}, {lobby.userList[0].user4 ? (" " + lobby.userList[0].user4) : (" Empty")}, {lobby.userList[0].user5 ? (" " + lobby.userList[0].user5) : (" Empty")}, {lobby.userList[0].user6 ? (" " + lobby.userList[0].user6) : (" Empty")}, {lobby.userList[0].user7 ? (" " + lobby.userList[0].user7) : (" Empty")}, {lobby.userList[0].user8 ? (" " + lobby.userList[0].user8) : (" Empty")}, {lobby.userList[0].user9 ? (" " + lobby.userList[0].user9) : (" Empty")}, {lobby.userList[0].user10 ? (" " + lobby.userList[0].user10) : (" Empty")}</p>
                                         {/* Expansions */}
                                         {/* <br /> */}
                                         <p><b>Expansions: </b>{lobby.expansions[0].baseGame ? (<span>Base Game</span>) : (<span></span>)}{lobby.expansions[0].first ? (<span>, The First Expansion</span>) : (<span></span>)}{lobby.expansions[0].second ? (<span>, The Second Expansion</span>) : (<span></span>)}{lobby.expansions[0].third ? (<span>, The Third Expansion</span>) : (<span></span>)}{lobby.expansions[0].fourth ? (<span>, The Fourth Expansion</span>) : (<span></span>)}{lobby.expansions[0].fifth ? (<span>, The Fifth Expansion</span>) : (<span></span>)}{lobby.expansions[0].sixth ? (<span>, The Sixth Expansion</span>) : (<span></span>)}</p>
@@ -58,7 +59,7 @@ class Dashboard extends Component {
                                         <p><b>Goal: </b> {lobby.wincount}</p>
                                     </div>
                                     <div className="card-action bottom">
-                                        {lobby.passwordBool ? (<a href="/api/join/{lobby._id}">Join Game(PASSWORDED)</a>) : (<a href="/api/join/:id">Join Game</a>)}
+                                        {lobby.passwordBool ? (<a href="/api/join/{lobby._id}">Join Game(PASSWORDED)</a>) : (<a href="/lobby/{lobby._id}">Join Game</a>)}
                                     </div>
                                 </div>
                             </div>

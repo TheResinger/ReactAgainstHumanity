@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class Lobby extends Component {
   state = {
-
+    gamestarted: false,
+    
   };
 
   render() {
@@ -12,8 +13,11 @@ class Lobby extends Component {
         <div className="row" style={{marginBottom: "0px"}}>
           <div className="col">
             <div className="card black darken-1 z-depth-2" style={{ width: "170px", height: "170px" }}>
-              <div className="card-content white-text center-align" style={{ padding: "20px 10px 10px 10px" }}>
+              <div className="card-content white-text center-align" style={{ padding: "10px 10px 0px 10px" }}>
                 <span style={{fontSize: "16px"}}>This is the way the world ends / This is the way the world ends / Not with a bang but with ____.</span>
+              </div>
+              <div className="card-action" style={{ paddingLeft: "0px", paddingRight: "0px", paddingTop: "0px", paddingBottom: "0px", borderTop: "0px solid #000"}}>
+                  <button className="btn-flat black-text right disabled">DCK</button>
               </div>
             </div>
           </div>
@@ -33,7 +37,7 @@ class Lobby extends Component {
                 </div>
                 <div className="card-action" style={{ paddingLeft: "0px", paddingRight: "0px", paddingTop: "5px", paddingBottom: "5px" }}>
                   <button className="waves-effect waves-teal btn-flat black-text" style={{marginLeft: "5px"}}>Play Card</button>
-                  <button className="btn-flat black-text right disabled">DCK</button>
+                  <button className="btn-flat black-text right disabled">BSE</button>
                 </div>
               </div>
             </div>
