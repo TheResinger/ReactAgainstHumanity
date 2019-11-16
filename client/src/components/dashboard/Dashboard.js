@@ -9,7 +9,8 @@ import API from "../../utils/API";
 
 class Dashboard extends Component {
     state = {
-        lobbies: []
+        lobbies: [],
+        userName: ""
     };
 
     componentDidMount() {
@@ -26,34 +27,42 @@ class Dashboard extends Component {
             this.setState({ lobbies: res.data })
         }).catch(err => console.log(err));
     }
-    joinLobby = id => {
-
+    createLobby = name => {
+        const { user } = this.props.auth;
+        API.addLobby({
+            userList: user.name, 
+            expansions: ["Base Game"], 
+            wincount: 10, 
+            gameName: `${user.name}'s Game`,
+            passwordBool: false,
+            password: "",
+            gameStarted: false,
+        }).then(res => this.props.history.push(`/lobby/${res.data._id}`)).catch(err => console.log(err))
     }
 
-
+    
     render() {
         // const { user } = this.props.auth;
-
+        
         return (
             <div className="container">
-                <div className="row">
-                    <button className="btn btn-large waves-effect waves-light hoverable blue accent-3 left" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.onLogoutClick}>Logout</button>
-                    <Link to="/newlobby" className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }}>
-                        New Lobby
-                            </Link>
+                {/* {this.setState(userName: user.name)} */}
+                <div className="row" style={{ padding: "0px 0.75rem"}}>
+                    <button className="btn btn-large waves-effect waves-light hoverable grey darken-3 accent-3 left" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.onLogoutClick}>Logout</button>
+                    <button className="btn btn-large waves-effect waves-light hoverable grey darken-3 accent-3 right" style={{ width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem" }} onClick={this.createLobby}>New Lobby</button>
                 </div>
                 {this.state.lobbies.length ? (
                     <div className="row">
                         {this.state.lobbies.map(lobby => (
                             <div key={lobby._id} className="col s12 m6 l4" id={lobby._id}>
                                 {lobby.expansions[0].baseGame}
-                                <div className="card small black">
+                                <div className="card small grey darken-3">
                                     <div className="card-content white-text">
                                         <span className="card-title"><strong>{lobby.gameName}</strong></span>
-                                        <p><b>User List: </b>{lobby.userList.map(name => <span key={Math.random()}>{name}, </span>)}</p>
+                                        <p><b>User List: </b>{lobby.userList.map((name, index) => <span key={index}>{name}, </span>)}</p>
                                         {/* Expansions */}
                                         {/* <br /> */}
-                                        <p><b>Expansions: </b>{lobby.expansions[0].baseGame ? (<span>Base Game</span>) : (<span></span>)}{lobby.expansions[0].first ? (<span>, The First Expansion</span>) : (<span></span>)}{lobby.expansions[0].second ? (<span>, The Second Expansion</span>) : (<span></span>)}{lobby.expansions[0].third ? (<span>, The Third Expansion</span>) : (<span></span>)}{lobby.expansions[0].fourth ? (<span>, The Fourth Expansion</span>) : (<span></span>)}{lobby.expansions[0].fifth ? (<span>, The Fifth Expansion</span>) : (<span></span>)}{lobby.expansions[0].sixth ? (<span>, The Sixth Expansion</span>) : (<span></span>)}</p>
+                                        <p><b>Expansions: </b>{lobby.expansions.map((expansion, index) => <span key={index}>{expansion}, </span>)}</p>
                                         {/* Points to Win */}
                                         {/* <br /> */}
                                         <p><b>Goal: </b> {lobby.wincount}</p>
@@ -70,7 +79,7 @@ class Dashboard extends Component {
                         ))}
                     </div>
                 ) : (
-                        <h3 className="text-center">No Lobbies To Display.</h3>
+                        <h3 className="text-center white-text">No Lobbies To Display.</h3>
                     )}
             </div>
         );

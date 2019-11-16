@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 const lobbySchema = new Schema({
   userList: [],
-  expansions: [{ expansion: String }],
+  expansions: [],
   wincount: Number,
   gameName: String,
   passwordBool: Boolean,
-  password: String
+  password: String,
+  gameStarted: Boolean,
 });
 
 const Lobby = mongoose.model("Lobby", lobbySchema);
 
 module.exports = Lobby;
+

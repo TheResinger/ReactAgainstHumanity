@@ -1,7 +1,7 @@
 {
-  "name": "disneyunitedway-mern",
+  "name": "reactagainsthumanity",
   "version": "1.0.0",
-  "description": "Disney United Way Cast Donation Portal",
+  "description": "StuffAndThings",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -13,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "Richard G. Scates",
+  "author": "Benjamin Morrow",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
@@ -27,6 +27,7 @@
     "mongoose": "^5.6.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "socket.io": "^2.3.0",
     "validator": "^11.1.0"
   },
   "devDependencies": {

@@ -7,13 +7,7 @@ export default {
   getLobby: function(id) {
     return axios.get("/api/lobby/" + id)
   },
-  addLobby: function(lobbyData) {
-    return axios.post("/api/lobby", lobbyData);
+  addLobby: function(name) {
+    return axios.post("/api/lobby", name);
   },
-  loadWhiteCards: function(expansionData) {
-    return axios.get("/api/whiteCards", expansionData);
-  },
-  loadBlackCards: function(expansionData) {
-    return axios.get("/api/blackCards", expansionData);
-  }
 }

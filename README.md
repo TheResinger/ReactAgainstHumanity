@@ -7,11 +7,12 @@ Built following the tutorial at https://blog.bitsrc.io/build-a-login-auth-app-wi
 
 ## TODO
 - [x] Set up user registration and login
-- [ ] Set up Lobby Display
-- [ ] Figure out how to iterate through expansions object for lobby display
-- [ ] Set up Lobby Creation
-- [ ] Set up Lobby Joining
-- [ ] Add Base Game Cards
+- [x] Set up Lobby Display
+- [x] Figure out how to iterate through expansions object for lobby display
+- [x] Set up Lobby Creation
+- [x] Set up Lobby Joining
+- [x] Add Base Game Cards
+- [ ] Figure out how to use websockets for multiplayer aspect
 - [ ] Add Expansion Cards
 - [ ] Add Search Bar to lobby list
 

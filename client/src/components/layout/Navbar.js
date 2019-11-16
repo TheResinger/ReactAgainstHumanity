@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
     render() {
         return (
-            <div className="navbar-fixed black">
-                <nav className="z-depth-0">
+            <div className="navbar-fixed">
+                <nav className="z-depth-0 grey darken-3">
                     <div className="">
                         <ul className="left hide-on-med-and-down">
                             <li><a href="https://github.com/TheResinger/ReactAgainstHumanity">GitHub</a></li>

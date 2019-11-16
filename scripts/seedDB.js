@@ -6,7 +6,7 @@ const WhiteCard = require("../models/WhiteCard");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactagainsthumanity");
 
-const blackCardSeed = [
+const blackCardsBaseGame = [
   {
     "text": "Why can't I sleep at night?",
     "pick": 1,
@@ -446,7 +446,7 @@ const blackCardSeed = [
   }
 ];
 
-const whiteCardSeed = [
+const whiteCardsBaseGame = [
   {
     "text": "Coat hanger abortions.",
     "expansion": "BaseGame"

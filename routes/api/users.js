@@ -14,35 +14,6 @@ router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) return res.status(400).json(errors);
-
-    const testlobby = new Lobby({
-        "userList": {
-            "user1": "rewrew",
-            "user2": "dfsajklfd",
-            "user3": null,
-            "user4": null,
-            "user5": null,
-            "user6": null,
-            "user7": null,
-            "user8": null,
-            "user9": null,
-            "user10": null,
-        },
-        "expansions": {
-            "baseGame": true,
-            "first": false,
-            "second": false,
-            "third": false,
-            "fourth": false,
-            "fifth": false,
-            "sixth": false
-        },
-        "wincount": 10,
-        "gameName": "rewrew's Game",
-        "passwordBool": false,
-        "password": null
-    });
-    testlobby.save().then(lobby => res.json(lobby)).catch(err => console.log(err));
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
