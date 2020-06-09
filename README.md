@@ -62,3 +62,7 @@ TBD
     - Give all users in game 10 random white cards
       - Remove cards from main white card array so there wont be duplicates
       - After round end add cards back to white card array so they can be added to players hand again later (chances of this potentially happening are slimg anyways. But its good to have the possibility.)
+
+
+# Deployed Link
+https://reactagainsthumanity.herokuapp.com/
